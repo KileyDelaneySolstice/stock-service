@@ -6,6 +6,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -13,9 +15,11 @@ import java.util.List;
 import java.util.Map;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Entity
 public class Stock {
 
     @JsonProperty("symbol")
+    @Id
     private int id;
 
     private String name;
